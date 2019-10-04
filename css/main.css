@@ -25,3 +25,36 @@
   color: #fff;
   text-decoration: none;
 }
+
+
+
+// contact
+
+.container {
+
+	background-color: #fff;
+	padding-top: 100px;
+	
+} 
+
+#contact-form {
+
+	margin-top: 50px;
+	font-size: 25px;
+
+}
+
+
+.radio {
+
+	display: inline;
+}
+
+.radio input {
+	margin-right: 5px;
+}
+
+
+.man {
+	margin-right: 15px;
+}
