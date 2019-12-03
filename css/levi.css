@@ -44,6 +44,17 @@ header .overlay {
   z-index: 1;
 }
 
+header .overlayimage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
 @media screen and (max-width: 600px) {
   header {
     background: url('../image/mobileheader.jpg') black no-repeat center center scroll;
@@ -59,4 +70,20 @@ header .overlay {
 
 .row {
   margin-top: 50px;
+}
+
+ul .test {
+  text-color: black;
+  text-size: 20px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a.test {
+  color: black;
+  text-size: 20px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none; 
 }
