@@ -14,7 +14,27 @@ header {
   z-index: 1;
 }
 
+h1.display-4 {
+  font-weight: 350;
+  font-size: 100px;
+}
+
 header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -40,7 +60,7 @@ header .overlay {
   height: 100%;
   width: 100%;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.4;
   z-index: 1;
 }
 
@@ -51,7 +71,7 @@ header .overlayimage {
   height: 100%;
   width: 100%;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.2;
   z-index: 1;
 }
 
@@ -72,17 +92,8 @@ header .overlayimage {
   margin-top: 50px;
 }
 
-ul .test {
-  text-color: black;
-  text-size: 20px;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-a.test {
+a.foolinks {
   color: black;
-  text-size: 20px;
   margin: 0;
   padding: 0;
   list-style-type: none; 
