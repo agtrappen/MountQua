@@ -23,7 +23,7 @@ open index.html
 * Verdeling gemaakt voor tekst colom en videoheader aan het invoegen geweest.
 * Tevens de responsive aangepast en in orde gemaakt voor alle devices. 
 
-## How to push to project?
+## How to push to project
 
 ```
 git add -A
