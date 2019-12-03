@@ -10,6 +10,10 @@ header {
   overflow: hidden;
 }
 
+.w-100.text-white {
+  z-index: 1;
+}
+
 header video {
   position: absolute;
   top: 50%;
@@ -17,7 +21,7 @@ header video {
   min-width: 100%;
   min-height: 100%;
   width: 100%;
-  height: auto%;
+  height: auto;
   z-index: 0;
   -ms-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
@@ -26,7 +30,6 @@ header video {
 }
 
 header .container {
-  position: relative;
   z-index: 2;
 }
 
@@ -41,9 +44,9 @@ header .overlay {
   z-index: 1;
 }
 
-@media (pointer: coarse) and (hover: none) {
+@media screen and (max-width: 600px) {
   header {
-    background: url('https://i.ibb.co/fpmZh3S/mobileheader.jpg') black no-repeat center center scroll;
+    background: url('../image/mobileheader.jpg') black no-repeat center center scroll;
   }
   header video {
     display: none;
