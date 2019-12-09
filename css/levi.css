@@ -4,8 +4,8 @@
 header {
   position: relative;
   background-color: black;
-  height: 50vh;
-  min-height: 25rem;	
+  height: 400px;
+  min-height: 400px;	
   width: 100%;
   overflow: hidden;
 }
@@ -97,4 +97,29 @@ a.foolinks {
   margin: 0;
   padding: 0;
   list-style-type: none; 
+}
+
+.containerct {
+	background-color: #fff;
+	padding-top: 100px;
+} 
+
+#contact-form {
+	margin-top: 50px;
+	font-size: 25px;
+}
+
+/**
+* Kleur voor menu
+*/
+.p-2 {
+  color: #39abe2;
+}
+
+.p2 {
+  color: #39abe2;
+}
+
+.p-2:hover {
+  color: #39abe2;
 }
