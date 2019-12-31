@@ -39,4 +39,27 @@ DELIMITER ;
 CALL GetAllProducts();
 
 
+#Als admin wil ik een view kunnen zien van alle facturen met bestelstatus betaald  en de namen van de  gebruikers die daarbij horen.
+CREATE VIEW BestelStatusGebruiker
+AS
+SELECT
+    Voornaam,
+    Achternaam,
+    Factuur.BestelStatus
+FROM
+    Gebruiker
+INNER JOIN
+    Factuur
+WHERE BestelStatus = true;
+
+
+#trigger
+
+
+
+
+
+    
+    
+
 
