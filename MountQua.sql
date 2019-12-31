@@ -89,6 +89,8 @@ CREATE TABLE Bestelling (
 
 
 
+
+
 DROP TABLE IF EXISTS Betaling;
 
 CREATE TABLE Betaling (
@@ -117,7 +119,7 @@ CREATE TABLE Factuur (
 
     Bestelnummer INT PRIMARY KEY,
     Factuurnummer VARCHAR(20),
-    BestelStatus BOOL NOT NULL,
+    BestelStatus BOOLEAN,
     Datum DATE NOT NULL,
     CONSTRAINT FK_Factuur_Betaling
     FOREIGN KEY (Factuurnummer) REFERENCES Betaling (Factuurnummer)
@@ -126,25 +128,6 @@ CREATE TABLE Factuur (
     
 
 );
-
-
-
-
-#Stored Procedure
-
-DELIMITER $$
-
-CREATE PROCEDURE GetAllProducts()
-BEGIN
-    SELECT * FROM Artikel
-    WHERE Voorraad > 65;
-END $$
-
-DELIMITER ;
-
-
-
-
 
 #Bedrijf
 INSERT INTO Bedrijf VALUES ("Hogeschoollaan 1", "Breda", "1234AB", "MountQua is gevestigd in Breda", "076-12345", "MountQua@avans.nl");
@@ -165,8 +148,45 @@ INSERT INTO Artikel VALUES ("","MountQua Clear", "Natuurlijk bronwater", "1,00",
 INSERT INTO Artikel VALUES ("","MountQua Fruity", "Natuurlijk bronwater met fruitsmaak", "1,50", 80);
 INSERT INTO Artikel VALUES ("","MountQua Bubbly", "Bruizend bronwater", "1,50", 60);
 
+#Bestelling
+INSERT INTO Bestelling (Bestelnummer, GebruikerID, ArtikelID,Aantal, Datum) VALUES ("1","1","2","1","2019-12-31");
+
+#Betaling
+INSERT INTO Betaling (Factuurnummer, Bestelnummer, GebruikerID, Bedrag, Datum) VALUES ("1","1","1","1,50","2019-12-31");
+
+#factuur
+INSERT INTO Factuur (Bestelnummer, Factuurnummer, Bestelstatus, Datum) VALUES ("1","1",true,"2019-12-31");
 
 
+#Stored Procedure
+
+DELIMITER $$
+
+CREATE PROCEDURE GetAllProducts()
+BEGIN
+    SELECT * FROM Artikel
+    WHERE Voorraad > 65;
+END $$
+
+DELIMITER ;
+
+
+
+#view
+CREATE VIEW BestelStatusGebruiker
+AS
+SELECT
+    Voornaam,
+    Achternaam,
+    Factuur.BestelStatus
+FROM
+    Gebruiker
+INNER JOIN
+    Factuur
+WHERE BestelStatus = true;
+    
+
+#trigger
 
 
 
