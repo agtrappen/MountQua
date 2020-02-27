@@ -270,7 +270,8 @@ INSERT INTO `gebruiker` (
 +
 INSERT INTO `artikel` (`ArtikelID`, `Naam`, `Omschrijving`, `Prijs`, `Voorraad`) VALUES
 (1, 'Qua rood', 'water met een rood kleurtje', '3', 4),
-(2, 'Qua Bruisend', 'bruisend water', '4', 33);
+(2, 'Qua Bruisend', 'bruisend water', '4', 33),
+(3, 'Qua fruit', 'water met fruitsmaak', '3', 33),;
 
 INSERT INTO `bestelling` (`Bestelnummer`, `GebruikerID`, `Datum`) VALUES
 (2, 1, '2020-02-08');
