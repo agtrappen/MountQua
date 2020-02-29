@@ -266,18 +266,75 @@ INSERT INTO `gebruiker` (
         'testovich@gmail.com', 
         '0632243234234', 
         '2020-08-02'
-    );
-+
+    ),(
+        2, 
+        1, 
+        1, 
+        'Qui', 
+        'Nguyen', 
+        '1998-10-18', 
+        'Korenbloem', 
+        '3144ep', 
+        'Nederland', 
+        'test', 
+        'testovich@gmail.com', 
+        '0632243234234', 
+        '2020-08-02'
+    ),(
+        3, 
+        1, 
+        1, 
+        'Joep', 
+        'Oomens', 
+        '1998-10-18', 
+        'Korenbloem', 
+        '3144ep', 
+        'Nederland', 
+        'test', 
+        'testovich@gmail.com', 
+        '0632243234234', 
+        '2020-08-02'
+    ),(
+        4, 
+        1, 
+        1, 
+        'Kaylee', 
+        'Rietveld', 
+        '1998-10-18', 
+        'Korenbloem', 
+        '3144ep', 
+        'Nederland', 
+        'test', 
+        'testovich@gmail.com', 
+        '0632243234234', 
+        '2020-08-02'
+    ),(
+        5, 
+        1, 
+        1, 
+        'Levi', 
+        'den Ouden', 
+        '1998-10-18', 
+        'Korenbloem', 
+        '3144ep', 
+        'Nederland', 
+        'test', 
+        'testovich@gmail.com', 
+        '0632243234234', 
+        '2020-08-02'
+    )
+    ;
+
 INSERT INTO `artikel` (`ArtikelID`, `Naam`, `Omschrijving`, `Prijs`, `Voorraad`) VALUES
 (1, 'Qua rood', 'water met een rood kleurtje', '3', 4),
 (2, 'Qua Bruisend', 'bruisend water', '4', 33),
-(3, 'Qua fruit', 'water met fruitsmaak', '3', 33),;
+(3, 'Qua fruit', 'water met fruit smaak', '4', 33);
 
 INSERT INTO `bestelling` (`Bestelnummer`, `GebruikerID`, `Datum`) VALUES
 (2, 1, '2020-02-08');
 
 INSERT INTO `bestelling_artikel` (`ID`, `ArtikelID`, `Bestelnummer`, `Aantal`) VALUES
-(2, 2, 1, 3);
+(2, 2, 2, 3);
 
 SELECT bestelling.Bestelnummer, bestelling.GebruikerID, bestelling.Datum, 
 bestelling_artikel.ArtikelID, bestelling_artikel.Aantal
