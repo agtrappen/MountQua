@@ -6,6 +6,6 @@
         <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/pages/about">Over ons</a>
         <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/pages/contact">Contact</a>
     </nav>
-    <a class="p2 menu-item" href="account/login.html"><i class="fas fa-user"></i></a>&emsp;
-    <a class="p2 menu-item" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+    <a class="p2 menu-item" href="<?php echo URLROOT; ?>/auth/login"><i class="fas fa-user"></i></a>&emsp;
+    <a class="p2 menu-item" href="<?php echo URLROOT; ?>/pages/cart"><i class="fas fa-shopping-cart"></i></a>
 </div>
