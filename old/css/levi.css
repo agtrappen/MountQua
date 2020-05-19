@@ -1,0 +1,132 @@
+/**
+* css code voor header i.c.m. video
+*/
+header {
+  position: relative;
+  background-color: black;
+  height: 320px;
+  min-height: 320px;	
+  width: 100%;
+  overflow: hidden;
+}
+
+.w-100.text-white {
+  z-index: 1;
+}
+
+h1.display-4 {
+  font-weight: 350;
+  font-size: 90px;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+header .overlayimage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    background: url('../image/mobileheader.jpg') black no-repeat center center scroll;
+  }
+  header video {
+    display: none;
+  }
+}
+
+/**
+* Div row tusssenruimte
+*/
+
+.row {
+  margin-top: 50px;
+}
+
+a.foolinks {
+  color: black;
+  margin: 0;
+  padding: 0;
+  list-style-type: none; 
+}
+
+.containerct {
+	background-color: #fff;
+	padding-top: 100px;
+} 
+
+#contact-form {
+	margin-top: 50px;
+	font-size: 25px;
+}
+
+/**
+* Kleur voor menu
+*/
+.p-2 {
+  color: #39abe2;
+}
+
+.p2 {
+  color: #39abe2;
+}
+.p-2:hover {
+  color: #39abe2;
+}
+
+
+a.textlinks {
+  color: black;
+  margin: 0;
+  padding: 0;
+  list-style-type: none; 
+}
