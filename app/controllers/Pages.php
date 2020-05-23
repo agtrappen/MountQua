@@ -100,4 +100,14 @@
       // Load about view
       $this->view('pages/cart', $data);
     }
+
+    public function Qui(){
+      //Set Data
+      $data = [
+        'qui heeft een mooie kapsel'
+      ];
+
+      // Load about view
+      $this->view('pages/qui', $data);
+    }
 }
