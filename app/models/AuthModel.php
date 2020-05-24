@@ -26,11 +26,10 @@
     **/
     public function register($data){
       // Prepare Query
-      $this->db->query('INSERT INTO gebruiker (name, email, wachtwoord)
-      VALUES (:name, :email, :password)');
+      $this->db->query('INSERT INTO gebruiker (RolID, Email, Wachtwoord)
+      VALUES (1, :email, :password)');
 
       // Bind Values
-      $this->db->bind(':name', $data['name']);
       $this->db->bind(':email', $data['email']);
       $this->db->bind(':password', $data['password']);
 

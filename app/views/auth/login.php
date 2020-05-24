@@ -34,7 +34,7 @@
               <input type="submit" class="btn btn-success btn-block" value="Login">
             </div>
             <div class="col">
-              <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-light btn-block">Geen account? Registreer</a>
+              <a href="<?php echo URLROOT; ?>/auth/register" class="btn btn-light btn-block">Geen account? Registreer</a>
             </div>
           </div>
         </form>
