@@ -23,9 +23,9 @@
     **/
     public function index(){
       // If logged in, redirect to posts
-      // if(isset($_SESSION['user_id'])){
-      //   redirect('posts');
-      // }
+      if(isset($_SESSION['user_id'])){
+        redirect('crm');
+      }
 
       //Set Data
       $data = [
@@ -99,15 +99,5 @@
 
       // Load about view
       $this->view('pages/cart', $data);
-    }
-
-    public function Qui(){
-      //Set Data
-      $data = [
-        'qui heeft een mooie kapsel'
-      ];
-
-      // Load about view
-      $this->view('pages/qui', $data);
     }
 }

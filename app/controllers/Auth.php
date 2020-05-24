@@ -28,7 +28,7 @@
     public function register(){
       // Check if logged in
       if($this->isLoggedIn()){
-        redirect('pages/qui');
+        redirect('crm');
       }
 
       // Check if POST
@@ -125,7 +125,7 @@
     public function login(){
       // Check if logged in
       if($this->isLoggedIn()){
-        redirect('pages/qui');
+        redirect('crm');
       }
 
       // Check if POST
@@ -205,7 +205,7 @@
       $_SESSION['user_id'] = $user->id;
       $_SESSION['user_email'] = $user->email;
       $_SESSION['user_name'] = $user->name;
-      redirect('pages/qui');
+      redirect('crm');
     }
 
     /**
