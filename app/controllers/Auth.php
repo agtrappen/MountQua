@@ -28,7 +28,7 @@
     public function register(){
       // Check if logged in
       if($this->isLoggedIn()){
-        redirect('posts');
+        redirect('crm');
       }
 
       // Check if POST
@@ -37,7 +37,6 @@
         $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
         $data = [
-          'name' => trim($_POST['name']),
           'email' => trim($_POST['email']),
           'password' => trim($_POST['password']),
           'confirm_password' => trim($_POST['confirm_password']),
@@ -126,7 +125,7 @@
     public function login(){
       // Check if logged in
       if($this->isLoggedIn()){
-        redirect('posts');
+        redirect('crm');
       }
 
       // Check if POST
@@ -203,10 +202,10 @@
     * @return none
     **/
     public function createUserSession($user){
-      $_SESSION['user_id'] = $user->id;
-      $_SESSION['user_email'] = $user->email;
-      $_SESSION['user_name'] = $user->name;
-      redirect('posts');
+      $_SESSION['user_id'] = $user->GebruikerID;
+      $_SESSION['user_email'] = $user->Email;
+      $_SESSION['user_name'] = $user->Voornaam;
+      redirect('crm');
     }
 
     /**

@@ -12,7 +12,8 @@
     * @return none
     **/
     public function __construct(){
-
+      // Load Models
+      $this->companyModel = $this->model('CompanyModel');
     }
 
     /**
@@ -22,15 +23,16 @@
     * @return array $data
     **/
     public function index(){
+      $company = $this->companyModel->get(1);
+
       // If logged in, redirect to posts
-      // if(isset($_SESSION['user_id'])){
-      //   redirect('posts');
-      // }
+      if(isset($_SESSION['user_id'])){
+        redirect('crm');
+      }
 
       //Set Data
       $data = [
-        // 'title' => 'Welcome op GameplayParty',
-        // 'description' => ''
+        'company' => $company,
       ];
 
       // Load homepage/index view

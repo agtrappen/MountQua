@@ -26,11 +26,10 @@
     **/
     public function register($data){
       // Prepare Query
-      $this->db->query('INSERT INTO users (name, email,password)
-      VALUES (:name, :email, :password)');
+      $this->db->query('INSERT INTO gebruiker (RolID, Email, Wachtwoord)
+      VALUES (1, :email, :password)');
 
       // Bind Values
-      $this->db->bind(':name', $data['name']);
       $this->db->bind(':email', $data['email']);
       $this->db->bind(':password', $data['password']);
 
@@ -49,7 +48,7 @@
     * @return true||false
     **/
     public function findUserByEmail($email){
-      $this->db->query("SELECT * FROM users WHERE email = :email");
+      $this->db->query("SELECT * FROM gebruiker WHERE Email = :email");
       $this->db->bind(':email', $email);
 
       $row = $this->db->single();
@@ -69,12 +68,12 @@
     * @return string $row
     **/
     public function login($email, $password){
-      $this->db->query("SELECT * FROM users WHERE email = :email");
+      $this->db->query("SELECT * FROM gebruiker WHERE Email = :email");
       $this->db->bind(':email', $email);
 
       $row = $this->db->single();
-
-      $hashed_password = $row->password;
+      
+      $hashed_password = $row->Wachtwoord;
       if(password_verify($password, $hashed_password)){
         return $row;
       } else {
