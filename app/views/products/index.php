@@ -13,10 +13,10 @@
     </header>
     <div class="container">
         <div class="row">
-        <?php foreach($data['bioscopen'] as $post) : ?>
-            <div class="card card-body mb-3">
-                <h4 class="card-title"><?php echo $post->bios_naam; ?></h4>
-                <img src="<?php echo $post->bios_image; ?>" class="img-fluid" alt="Responsive image">
+        <?php foreach($data['products'] as $product) : ?>
+            <div class="card card-body mb-3 ml-2 mr-2 col-lg-3">
+                <h4 class="card-title"><?php echo $product->Naam; ?></h4>
+                <img src="<?php echo $product->Image; ?>" class="img-fluid" alt="Responsive image">
                 <a class="btn btn-success mt-1" href="<?php echo URLROOT; ?>/bioscopen/add/<?php echo $post->bios_id; ?>">Bestellen</a>
             </div>
         <?php endforeach; ?>
