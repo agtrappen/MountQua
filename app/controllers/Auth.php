@@ -202,9 +202,9 @@
     * @return none
     **/
     public function createUserSession($user){
-      $_SESSION['user_id'] = $user->id;
-      $_SESSION['user_email'] = $user->email;
-      $_SESSION['user_name'] = $user->name;
+      $_SESSION['user_id'] = $user->GebruikerID;
+      $_SESSION['user_email'] = $user->Email;
+      $_SESSION['user_name'] = $user->Voornaam;
       redirect('crm');
     }
 
