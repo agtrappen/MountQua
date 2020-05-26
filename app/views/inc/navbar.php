@@ -1,5 +1,8 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-bold logo-text"><img src="<?php echo URLROOT; ?>/public/img/logo.png" /></h5>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
     <nav class="my-2 my-md-0 mr-md-3">
         <?php if(!isset($_SESSION['user_id'])) : ?>
             <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/">Home</a>
