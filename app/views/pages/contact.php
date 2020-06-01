@@ -14,20 +14,20 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h2>Neem contact met ons op</h2>
-        <p>Vul het onderstaande contactformulier in of bel met onze consumentenservice: 088 - 525 75 50.</p><br>
-        <p><strong>Persoonlijke gegevens</strong></p>
+        <h2><?php echo $lang['contact'];?></h2>
+        <p><?php echo $lang['paragraaf'];?></p><br>
+        <p><strong><?php echo $lang['persoonlijkeGegevens'];?></strong></p>
                 <form action="<?php echo URLROOT; ?>/pages/contact" method = "post">
         <form class="my-md-4">
             <br>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="voornaam">Voornaam *</label>
-                    <input value="<?php echo $data['voornaam']; ?>" type="voornaam" class="form-control" name="voornaam" id="voornaam" placeholder="Voornaam">
+                    <label for="voornaam"><?php echo $lang['voornaam'];?></label>
+                    <input type="voornaam" class="form-control" name="voornaam" id="voornaam" placeholder="Voornaam">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="achternaam">Achternaam</label>
-                    <input value="<?php echo $data['achternaam']; ?>" type="achternaam" class="form-control" name="achternaam" id="achternaam" placeholder="Achternaam">
+                    <label for="achternaam"><?php echo $lang['achternaam'];?></label>
+                    <input type="achternaam" class="form-control" name="achternaam" id="achternaam" placeholder="Achternaam">
                 </div>
             </div>
             <div class="form-group">
@@ -36,35 +36,35 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="straatnaam">Straatnaam *</label>
+                    <label for="straatnaam"><?php echo $lang['straatnaam'];?></label>
                     <input type="text" class="form-control" name="straatnaam" id="straatnaam">
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="huisnummer">Huisnummer *</label>
+                    <label for="huisnummer"><?php echo $lang['huisnummer'];?></label>
                     <input type="text" class="form-control" name="huisnummer"id="huisnummer">
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="toevoeging">Toevoeging</label>
+                    <label for="toevoeging"><?php echo $lang['toevoeging'];?></label>
                     <input type="text" class="form-control" name="toevoeging" id="toevoeging">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="postcode">Postcode *</label>
+                    <label for="postcode"><?php echo $lang['postcode'];?></label>
                     <input type="text" class="form-control" name="postcode" id="postcode">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="woonplaats">Woonplaats *</label>
+                    <label for="woonplaats"><?php echo $lang['woonplaats'];?></label>
                     <input type="text" class="form-control" name="woonplaats" id="woonplaats">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3">
-                    <label for="telefoon">Telefoon *</label>
+                    <label for="telefoon"><?php echo $lang['telefoon'];?></label>
                     <input type="text" class="form-control" name="telefoon" id="telefoon">
                 </div>
             </div>
-            <h3>Je bericht</h3>
+            <h3><?php echo $lang['je_bericht'];?></h3>
             <div class="form-group">
                 <label for="onderwerp">Onderwerp *</label>
                 <select class="form-control" id="onderwerp">

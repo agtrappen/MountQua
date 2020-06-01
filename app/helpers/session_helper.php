@@ -9,6 +9,20 @@
 // Start the session
 session_start();
 
+// set language
+if (!isset($_SESSION['lang']))
+		$_SESSION['lang'] = "nl";
+	else if (isset($_GET['lang']) && $_SESSION['lang'] != $_GET['lang'] && !empty($_GET['lang'])) {
+		if ($_GET['lang'] == "nl")
+			$_SESSION['lang'] = "nl";
+		else if ($_GET['lang'] == "en")
+			$_SESSION['lang'] = "en";
+  }
+  
+  
+
+
+
 /**
 * flash method
 * @  Flash message helper, puts the flash div in the session

@@ -19,8 +19,8 @@
               <div class="col-md-4"><center>
                   <h5>contact</h5>
                   <ul class="list-unstyled">
-                      <li><a class="foolinks" href="#">Klantenservice</a></li>
-                      <li><a class="foolinks" href="#">Werken bij MountQua</a></li>
+                      <li><a class="foolinks" href="#"><?php echo$lang['klantenservice'];?></a></li>
+                      <li><a class="foolinks" href="#"><?php echo$lang['werkenbij'];?></a></li>
                   </ul>
               </div>
           </div>
@@ -28,9 +28,12 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <small class="text-small"><center>
                 <p><b>© MOUNTQUA <?php echo date("Y"); ?> -</b> TERMS & CONDITIONS <b>|</b> PRIVACY POLICY <b>|</b> COOKIES POLICY</p>
+                <a href="<?PHP $_SERVER['REQUEST_URI']; ?>?lang=nl"><?php echo$lang['nederlands'];?></a> | <a href="<?PHP $_SERVER['REQUEST_URI']; ?>?lang=en"><?php echo$lang['engels'];?></a>
               </center></small>
+              
             </div>
           </div> 
+         
       </footer>
   </div>
     <script src="js/levi.js"></script>
