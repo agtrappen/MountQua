@@ -1,6 +1,6 @@
 <?php
 /**
-* @deprecated Welcome class extends the controller class
+* @  Welcome class extends the controller class
 * @author Alexander
 * @version 1.0
 * @since 28-10-2018
@@ -11,7 +11,7 @@ session_start();
 
 /**
 * flash method
-* @deprecated Flash message helper, puts the flash div in the session
+* @  Flash message helper, puts the flash div in the session
 * @param string $name string | string $message | string $class
 * @return none
 **/

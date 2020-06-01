@@ -1,6 +1,6 @@
 <?php
     /**
-    * @deprecated Controller class
+    * @  Controller class
     * @author Alexander
     * @version 1.0
     * @since 28-10-2018
@@ -8,7 +8,7 @@
   class Controller {
     /**
     * model method
-    * @deprecated Lets us load model from controllers
+    * @  Lets us load model from controllers
     * @param string $model
     * @return string $model, instaniate model
     **/
@@ -21,7 +21,7 @@
 
     /**
     * view method
-    * @deprecated Lets us load view from controllers
+    * @  Lets us load view from controllers
     * @param string $url | array $data
     * @return string $url, requires view  file
     **/

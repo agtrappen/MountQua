@@ -1,6 +1,6 @@
 <?php
     /**
-    * @deprecated Product model
+    * @  Product model
     * @author Alexander
     * @version 1.0
     * @since 28-10-2018
@@ -10,7 +10,7 @@
 
     /**
     * post constructor
-    * @deprecated creates new db object
+    * @  creates new db object
     * @param none
     * @return none
     **/
@@ -20,7 +20,7 @@
 
     /**
     * getposts method
-    * @deprecated Gets all products
+    * @  Gets all products
     * @param none
     * @return string $results
     **/

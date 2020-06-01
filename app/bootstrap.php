@@ -1,6 +1,6 @@
 <?php
 /**
-* @deprecated Bootstrap
+* @  Bootstrap
 * @author Alexander
 * @version 1.0
 * @since 28-10-2018
@@ -16,7 +16,7 @@
 
   /**
   * autoload method
-  * @deprecated Autoloads the Core Classes
+  * @  Autoloads the Core Classes
   * @param string $classname
   * @return string $classname
   **/

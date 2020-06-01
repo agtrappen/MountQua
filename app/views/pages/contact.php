@@ -17,23 +17,17 @@
         <h2>Neem contact met ons op</h2>
         <p>Vul het onderstaande contactformulier in of bel met onze consumentenservice: 088 - 525 75 50.</p><br>
         <p><strong>Persoonlijke gegevens</strong></p>
-                <form action="contact.php" method = "post">
+                <form action="<?php echo URLROOT; ?>/pages/contact" method = "post">
         <form class="my-md-4">
-            <p id="aanhef"><strong>Aanhef</strong></p>
-            <div class="radio man">
-                <label><input type="radio" name="optradio" checked>Man</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio" checked>Vrouw</label>
-            </div><br>
+            <br>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="voornaam">Voornaam *</label>
-                    <input type="voornaam" class="form-control" name="voornaam" id="voornaam" placeholder="Voornaam">
+                    <input value="<?php echo $data['voornaam']; ?>" type="voornaam" class="form-control" name="voornaam" id="voornaam" placeholder="Voornaam">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="achternaam">Achternaam</label>
-                    <input type="achternaam" class="form-control" name="achternaam" id="achternaam" placeholder="Achternaam">
+                    <input value="<?php echo $data['achternaam']; ?>" type="achternaam" class="form-control" name="achternaam" id="achternaam" placeholder="Achternaam">
                 </div>
             </div>
             <div class="form-group">
