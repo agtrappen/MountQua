@@ -1,195 +1,291 @@
-DROP DATABASE IF EXISTS MountQua;
-CREATE DATABASE MountQua;
-USE MountQua;
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 01, 2020 at 07:05 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-DROP TABLE IF EXISTS Bedrijf;
+--
+-- Database: `mountqua`
+--
 
-CREATE TABLE Bedrijf (
-    
-    Straat VARCHAR(20) PRIMARY KEY,
-    Plaats VARCHAR(20) NOT NULL,
-    Postcode VARCHAR(6) NOT NULL,
-    Beschrijving VARCHAR(100) NOT NULL,
-    Telefoonnummer VARCHAR(10) NOT NULL,
-    Email VARCHAR(20) NOT NULL
+-- --------------------------------------------------------
 
-);
+--
+-- Table structure for table `artikel`
+--
 
+CREATE TABLE `artikel` (
+  `ArtikelID` int(11) NOT NULL,
+  `Naam` varchar(255) DEFAULT NULL,
+  `Omschrijving` varchar(255) DEFAULT NULL,
+  `Prijs` decimal(10,0) DEFAULT NULL,
+  `Voorraad` int(11) DEFAULT NULL,
+  `Image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `artikel`
+--
 
+INSERT INTO `artikel` (`ArtikelID`, `Naam`, `Omschrijving`, `Prijs`, `Voorraad`, `Image`) VALUES
+(1, 'Qua rood', 'water met een rood kleurtje', '3', 4, 'public/img/rood.jpg'),
+(2, 'Qua Bruisend', 'bruisend water', '4', 33, 'public/img/bruisend.jpg');
 
-DROP TABLE IF EXISTS Rol;
+-- --------------------------------------------------------
 
-CREATE TABLE Rol (
+--
+-- Table structure for table `bedrijf`
+--
 
-    Voornaam VARCHAR(20)NOT NULL PRIMARY KEY,
-    ID INT
-    
-);
+CREATE TABLE `bedrijf` (
+  `BedrijfID` int(11) NOT NULL,
+  `Plaats` varchar(255) DEFAULT NULL,
+  `Postcode` varchar(255) DEFAULT NULL,
+  `Land` varchar(255) NOT NULL,
+  `Btw` varchar(255) NOT NULL,
+  `Kvk` varchar(255) NOT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  `Telefoon` varchar(255) DEFAULT NULL,
+  `Bedrijfsnaam` varchar(255) DEFAULT NULL,
+  `Titel` varchar(255) NOT NULL,
+  `Subtitel` varchar(255) NOT NULL,
+  `Content` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS Gebruiker;
+--
+-- Dumping data for table `bedrijf`
+--
 
-CREATE TABLE Gebruiker (
+INSERT INTO `bedrijf` (`BedrijfID`, `Plaats`, `Postcode`, `Land`, `Btw`, `Kvk`, `Email`, `Telefoon`, `Bedrijfsnaam`, `Titel`, `Subtitel`, `Content`) VALUES
+(1, 'Hogeschoollaan ', '4818 CR', 'Nederland', 'NL808852218B012', '411044081', 'test@gmail.com', '02315456652', 'MountQua B.V.', 'Vanaf de top gezuiverd!', 'De bron is belangrijker dan het flesje', 'In alles wat we doen staat respect voor de natuur op nummer 1. <br>Vanaf de bron van ons water tot de manier waarop we de flessen maken en ermee omgaan.');
 
-    GebruikerID INT AUTO_INCREMENT PRIMARY KEY,
-    Voornaam VARCHAR (20) NOT NULL,
-    Achternaam VARCHAR (20) NOT NULL,
-    Geboortedatum DATE NOT NULL,
-    Straat VARCHAR (20) NOT NULL,
-    Postcode VARCHAR (6) NOT NULL,
-    Woonplaats VARCHAR (20) NOT NULL,
-    Wachtwoord VARCHAR (20) NOT NULL,
-    Email VARCHAR(20) NOT NULL,
-    Telefoon VARCHAR (20) NOT NULL,
-    Aanmaakdatum DATE NOT NULL,
-    CONSTRAINT FK_Gebruiker_Rol
-    FOREIGN KEY (Voornaam) REFERENCES Rol (Voornaam)
-        ON UPDATE CASCADE
-        ON DELETE CASCADE
-    
-);
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `bestelling`
+--
 
-DROP TABLE IF EXISTS Artikel;
+CREATE TABLE `bestelling` (
+  `Bestelnummer` int(11) NOT NULL,
+  `GebruikerID` int(11) DEFAULT NULL,
+  `Datum` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE Artikel (
-    
-    ArtikelID INT AUTO_INCREMENT PRIMARY KEY,
-    Naam VARCHAR (20) NOT NULL,
-    Omschrijving VARCHAR (100) NOT NULL,
-    Prijs DECIMAL (5,2) NOT NULL,
-    Voorraad INT NOT NULL
-    
-    
-);
+--
+-- Dumping data for table `bestelling`
+--
 
+INSERT INTO `bestelling` (`Bestelnummer`, `GebruikerID`, `Datum`) VALUES
+(1, 1, '2020-02-08'),
+(2, 1, '2020-02-08');
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS Bestelling; 
+--
+-- Table structure for table `bestelling_artikel`
+--
 
-CREATE TABLE Bestelling (
+CREATE TABLE `bestelling_artikel` (
+  `ID` int(11) NOT NULL,
+  `ArtikelID` int(11) DEFAULT NULL,
+  `Bestelnummer` int(11) DEFAULT NULL,
+  `Aantal` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-    Bestelnummer INT AUTO_INCREMENT PRIMARY KEY,
-    GebruikerID INT,
-    ArtikelID INT,
-    Aantal INT NOT NULL,
-    Datum DATE NOT NULL,
-    CONSTRAINT FK_Bestelling_Gebruiker
-    FOREIGN KEY (GebruikerID) REFERENCES Gebruiker (GebruikerID)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    CONSTRAINT FK_Bestelling_Artikel
-    FOREIGN KEY (ArtikelID) REFERENCES Artikel (ArtikelID)
-        ON UPDATE CASCADE
-        ON DELETE CASCADE
+--
+-- Dumping data for table `bestelling_artikel`
+--
 
-);
+INSERT INTO `bestelling_artikel` (`ID`, `ArtikelID`, `Bestelnummer`, `Aantal`) VALUES
+(1, 2, 1, 3),
+(2, 2, 1, 3);
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `factuur`
+--
 
+CREATE TABLE `factuur` (
+  `FactuurID` int(11) NOT NULL,
+  `Bestelnummer` int(11) DEFAULT NULL,
+  `Betaald` tinyint(1) DEFAULT NULL,
+  `Datum` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS Betaling;
+--
+-- Table structure for table `gebruiker`
+--
 
-CREATE TABLE Betaling (
+CREATE TABLE `gebruiker` (
+  `GebruikerID` int(11) NOT NULL,
+  `BedrijfID` int(11) DEFAULT NULL,
+  `RolID` int(11) NOT NULL,
+  `Voornaam` varchar(255) DEFAULT NULL,
+  `Achternaam` varchar(255) DEFAULT NULL,
+  `Geboortedatum` date DEFAULT NULL,
+  `Straat` varchar(255) DEFAULT NULL,
+  `Postcode` varchar(255) DEFAULT NULL,
+  `Woonplaats` varchar(255) DEFAULT NULL,
+  `Wachtwoord` varchar(255) DEFAULT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  `Telefoon` varchar(255) DEFAULT NULL,
+  `Aanmaakdatum` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-    Factuurnummer VARCHAR(20) PRIMARY KEY,
-    Bestelnummer INT,
-    GebruikerID INT,
-    Bedrag DECIMAL,
-    Datum DATE,
-    CONSTRAINT FK_Betaling_Bestelling
-    FOREIGN KEY (Bestelnummer) REFERENCES Bestelling (Bestelnummer)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    CONSTRAINT FK_Betaling_Gebruiker
-    FOREIGN KEY (GebruikerID) REFERENCES Gebruiker (GebruikerID)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
+--
+-- Dumping data for table `gebruiker`
+--
 
-);
+INSERT INTO `gebruiker` (`GebruikerID`, `BedrijfID`, `RolID`, `Voornaam`, `Achternaam`, `Geboortedatum`, `Straat`, `Postcode`, `Woonplaats`, `Wachtwoord`, `Email`, `Telefoon`, `Aanmaakdatum`) VALUES
+(1, 1, 2, 'Alexander', 'Trappenberg', '1998-10-18', 'Korenbloem', '3144ep', 'Nederland', '$2y$10$EgkTm.VH8AkMKObhI290s..oPHZGjw/FPj/F9pB8.SuMa15sA3lLG', 'testovich@gmail.com', '0632243234234', '2020-08-02'),
+(3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$IBOu9Pt2QuPkOD6YIP6vhejogC7VFJ96N9n1K9MuX4J1L6/TdTvZ6', 'test@gmail.com', NULL, NULL);
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `rol`
+--
 
-DROP TABLE IF EXISTS Factuur;
+CREATE TABLE `rol` (
+  `RolID` int(1) NOT NULL,
+  `Role_Name` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE Factuur (
+--
+-- Dumping data for table `rol`
+--
 
-    Bestelnummer INT PRIMARY KEY,
-    Factuurnummer VARCHAR(20),
-    BestelStatus BOOLEAN,
-    Datum DATE NOT NULL,
-    CONSTRAINT FK_Factuur_Betaling
-    FOREIGN KEY (Factuurnummer) REFERENCES Betaling (Factuurnummer)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
-    
+INSERT INTO `rol` (`RolID`, `Role_Name`) VALUES
+(1, 'admin'),
+(2, 'read_only'),
+(3, 'edit');
 
-);
+--
+-- Indexes for dumped tables
+--
 
-#Bedrijf
-INSERT INTO Bedrijf VALUES ("Hogeschoollaan 1", "Breda", "1234AB", "MountQua is gevestigd in Breda", "076-12345", "MountQua@avans.nl");
+--
+-- Indexes for table `artikel`
+--
+ALTER TABLE `artikel`
+  ADD PRIMARY KEY (`ArtikelID`);
 
-#Rol
-INSERT INTO Rol VALUES ("Qui","1");
+--
+-- Indexes for table `bedrijf`
+--
+ALTER TABLE `bedrijf`
+  ADD PRIMARY KEY (`BedrijfID`);
 
-#gebruiker
-INSERT INTO Gebruiker VALUES ("","Qui","Nguyen","1989-10-04","Nieuwe Dieststraat 34","4811VE","Breda","1234","vqnguyen1@avans.nl","06123456789","2019-12-23");
-/*INSERT INTO Gebruiker VALUES ();
-INSERT INTO Gebruiker VALUES ();
-INSERT INTO Gebruiker VALUES ();
-INSERT INTO Gebruiker VALUES ();*/
+--
+-- Indexes for table `bestelling`
+--
+ALTER TABLE `bestelling`
+  ADD PRIMARY KEY (`Bestelnummer`),
+  ADD KEY `bestelling_ibfk_1` (`GebruikerID`);
 
+--
+-- Indexes for table `bestelling_artikel`
+--
+ALTER TABLE `bestelling_artikel`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `bestelling_artikel_ibfk_1` (`Bestelnummer`),
+  ADD KEY `bestelling_artikel_ibfk_2` (`ArtikelID`);
 
-#artikelen
-INSERT INTO Artikel VALUES ("","MountQua Clear", "Natuurlijk bronwater", "1,00", 100);
-INSERT INTO Artikel VALUES ("","MountQua Fruity", "Natuurlijk bronwater met fruitsmaak", "1,50", 80);
-INSERT INTO Artikel VALUES ("","MountQua Bubbly", "Bruizend bronwater", "1,50", 60);
+--
+-- Indexes for table `factuur`
+--
+ALTER TABLE `factuur`
+  ADD PRIMARY KEY (`FactuurID`),
+  ADD KEY `factuur_ibfk_1` (`Bestelnummer`);
 
-#Bestelling
-INSERT INTO Bestelling (Bestelnummer, GebruikerID, ArtikelID,Aantal, Datum) VALUES ("1","1","2","1","2019-12-31");
+--
+-- Indexes for table `gebruiker`
+--
+ALTER TABLE `gebruiker`
+  ADD PRIMARY KEY (`GebruikerID`),
+  ADD KEY `gebruiker_ibfk_1` (`BedrijfID`),
+  ADD KEY `gebruiker_ibfk_2` (`RolID`);
 
-#Betaling
-INSERT INTO Betaling (Factuurnummer, Bestelnummer, GebruikerID, Bedrag, Datum) VALUES ("1","1","1","1,50","2019-12-31");
+--
+-- Indexes for table `rol`
+--
+ALTER TABLE `rol`
+  ADD PRIMARY KEY (`RolID`);
 
-#factuur
-INSERT INTO Factuur (Bestelnummer, Factuurnummer, Bestelstatus, Datum) VALUES ("1","1",true,"2019-12-31");
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
+--
+-- AUTO_INCREMENT for table `artikel`
+--
+ALTER TABLE `artikel`
+  MODIFY `ArtikelID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `bedrijf`
+--
+ALTER TABLE `bedrijf`
+  MODIFY `BedrijfID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `bestelling`
+--
+ALTER TABLE `bestelling`
+  MODIFY `Bestelnummer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `factuur`
+--
+ALTER TABLE `factuur`
+  MODIFY `FactuurID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `gebruiker`
+--
+ALTER TABLE `gebruiker`
+  MODIFY `GebruikerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- Constraints for dumped tables
+--
 
-#Stored Procedure
+--
+-- Constraints for table `bestelling`
+--
+ALTER TABLE `bestelling`
+  ADD CONSTRAINT `bestelling_ibfk_1` FOREIGN KEY (`GebruikerID`) REFERENCES `gebruiker` (`GebruikerID`);
 
-DELIMITER $$
+--
+-- Constraints for table `bestelling_artikel`
+--
+ALTER TABLE `bestelling_artikel`
+  ADD CONSTRAINT `bestelling_artikel_ibfk_1` FOREIGN KEY (`Bestelnummer`) REFERENCES `bestelling` (`Bestelnummer`),
+  ADD CONSTRAINT `bestelling_artikel_ibfk_2` FOREIGN KEY (`ArtikelID`) REFERENCES `artikel` (`ArtikelID`);
 
-CREATE PROCEDURE GetAllProducts()
-BEGIN
-    SELECT * FROM Artikel
-    WHERE Voorraad > 65;
-END $$
+--
+-- Constraints for table `factuur`
+--
+ALTER TABLE `factuur`
+  ADD CONSTRAINT `factuur_ibfk_1` FOREIGN KEY (`Bestelnummer`) REFERENCES `bestelling` (`Bestelnummer`);
 
-DELIMITER ;
+--
+-- Constraints for table `gebruiker`
+--
+ALTER TABLE `gebruiker`
+  ADD CONSTRAINT `gebruiker_ibfk_1` FOREIGN KEY (`BedrijfID`) REFERENCES `bedrijf` (`BedrijfID`),
+  ADD CONSTRAINT `gebruiker_ibfk_2` FOREIGN KEY (`RolID`) REFERENCES `rol` (`RolID`);
 
-
-
-#view
-CREATE VIEW BestelStatusGebruiker
-AS
-SELECT
-    Voornaam,
-    Achternaam,
-    Factuur.BestelStatus
-FROM
-    Gebruiker
-INNER JOIN
-    Factuur
-WHERE BestelStatus = true;
-    
-
-#trigger
-
-
-
-
-
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
