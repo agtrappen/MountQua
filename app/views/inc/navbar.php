@@ -5,7 +5,7 @@
     </form>
     <nav class="my-2 my-md-0 mr-md-3">
         <?php if(!isset($_SESSION['user_id'])) : ?>
-            <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/">Home</a>
+            <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/index">Home</a>
             <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/products">Onze Producten</a>
             <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/pages/about">Over ons</a>
             <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/pages/contact">Contact</a>
