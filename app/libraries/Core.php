@@ -1,6 +1,6 @@
 <?php
     /**
-    * @deprecated Core class
+    * @  Core class
     * @author Alexander
     * @version 1.0
     * @since 28-10-2018
@@ -13,7 +13,7 @@
 
     /**
     * core constructor
-    * @deprecated Looks in controllers folder for controller and unset 0 index
+    * @  Looks in controllers folder for controller and unset 0 index
     * @param none
     * @return string $url
     **/
@@ -53,7 +53,7 @@
 
     /**
     * geturl method
-    * @deprecated Construct URL From $_GET['url']
+    * @  Construct URL From $_GET['url']
     * @param none
     * @return string $url
     **/

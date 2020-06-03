@@ -1,6 +1,6 @@
 <?php
 /**
-* @deprecated Welcome class extends the controller class
+* @  Welcome class extends the controller class
 * @author Alexander
 * @version 1.0
 * @since 28-10-2018
@@ -9,9 +9,23 @@
 // Start the session
 session_start();
 
+// set language
+if (!isset($_SESSION['lang']))
+		$_SESSION['lang'] = "nl";
+	else if (isset($_GET['lang']) && $_SESSION['lang'] != $_GET['lang'] && !empty($_GET['lang'])) {
+		if ($_GET['lang'] == "nl")
+			$_SESSION['lang'] = "nl";
+		else if ($_GET['lang'] == "en")
+			$_SESSION['lang'] = "en";
+  }
+  
+  
+
+
+
 /**
 * flash method
-* @deprecated Flash message helper, puts the flash div in the session
+* @  Flash message helper, puts the flash div in the session
 * @param string $name string | string $message | string $class
 * @return none
 **/

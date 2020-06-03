@@ -1,6 +1,6 @@
 <?php
     /**
-    * @deprecated Posts class extends the controller class
+    * @  Posts class extends the controller class
     * @author Alexander
     * @version 1.0
     * @since 28-10-2018
@@ -14,7 +14,7 @@
 
     /**
     * Index method
-    * @deprecated returns $data to posts/index
+    * @  returns $data to posts/index
     * @param none
     * @return array $data
     **/

@@ -1,6 +1,6 @@
 <?php
     /**
-    * @deprecated Auth class
+    * @  Auth class
     * @author Alexander
     * @version 1.0
     * @since 28-10-2018
@@ -10,7 +10,7 @@
 
     /**
     * user constructor
-    * @deprecated creates new db object
+    * @  creates new db object
     * @param none
     * @return none
     **/
@@ -20,7 +20,7 @@
 
     /**
     * register method
-    * @deprecated Add user or register
+    * @  Add user or register
     * @param array $data
     * @return true||false
     **/
@@ -43,7 +43,7 @@
 
     /**
     * finduserbyemail method
-    * @deprecated Find User BY Email
+    * @  Find User BY Email
     * @param string $email
     * @return true||false
     **/
@@ -63,7 +63,7 @@
 
     /**
     * login method
-    * @deprecated Authenticate the User
+    * @  Authenticate the User
     * @param string $email && string $password
     * @return string $row
     **/
@@ -83,7 +83,7 @@
 
     /**
     * getuserbyid method
-    * @deprecated Finds User By ID
+    * @  Finds User By ID
     * @param int $id
     * @return string $row
     **/

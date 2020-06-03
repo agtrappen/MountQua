@@ -1,3 +1,4 @@
+<?php require_once APPROOT . "/languages/" . $_SESSION['lang'] . ".php"; ?>
 <!DOCTYPE html>
 <html>
     <head>

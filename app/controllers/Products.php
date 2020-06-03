@@ -1,6 +1,6 @@
 <?php
     /**
-    * @deprecated Products class extends the controller class
+    * @  Products class extends the controller class
     * @author Alexander
     * @version 1.0
     * @since 28-10-2018
@@ -8,7 +8,7 @@
   class Products extends Controller{
       /**
       * Products constructor
-      * @deprecated makes an new object called $this->db
+      * @  makes an new object called $this->db
       * @param none
       * @return none
       **/
@@ -18,7 +18,7 @@
     }
     /**
     * Index method
-    * @deprecated gives $data to bioscopen/index
+    * @  gives $data to bioscopen/index
     * @param none
     * @return array $data
     **/
@@ -34,7 +34,7 @@
 
     /**
     * show method
-    * @deprecated receives $id from post models and returns it to bioscopen/show page
+    * @  receives $id from post models and returns it to bioscopen/show page
     * @param int $id from post models
     * @return array $data
     **/
