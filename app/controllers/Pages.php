@@ -63,31 +63,46 @@
     * @return array $data
     **/
     public function contact(){
-      if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        // Sanitize POST
-        $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-        // the message
-        // Make sure there are no errors
-        if(empty($data['body_err'])){
-          if($this->contactModel->add($data)){
-            // Redirect to login
-            redirect('pages/contact');
-          } else {
-            die('Something went wrong');
-          }
-        } else {
-          // Load view with errors
-          $this->view('pages/contact', $data);
-        }
-      } else {
-      //Set Data
-      $data = [
-        'version' => '1.0.0'
-      ];
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Sanitize POST
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-      // Load about view
-      $this->view('pages/contact', $data);
-    }
+            $data = [
+                'voornaam' => trim($_POST['voornaam']),
+                'achternaam' => trim($_POST['achternaam']),
+                'email' => trim($_POST['email']),
+                'straatnaam' => trim($_POST['straatnaam']),
+                'huisnummer' => trim($_POST['huisnummer']),
+                'toevoeging' => trim($_POST['toevoeging']),
+                'postcode' => trim($_POST['postcode']),
+                'woonplaats' => trim($_POST['woonplaats']),
+                'telefoon' => trim($_POST['telefoon']),
+                'onderwerp' => trim($_POST['onderwerp']),
+                'telefoon' => trim($_POST['telefoon']),
+                'bericht' => trim($_POST['bericht']),
+                'bijlage' => trim($_POST['bijlage']),
+            ];
+            $this->contactModel->add($data);
+            redirect('/');
+        }
+        //Set Data
+          $data = [
+            'voornaam' => '',
+            'achternaam' => '',
+            'email' => '',
+            'straatnaam' => '',
+            'huisnummer' => '',
+            'toevoeging' => '',
+            'postcode' => '',
+            'woonplaats' => '',
+            'telefoon' => '',
+            'onderwerp' => '',
+            'bericht' => '',
+            'bijlage' => '',
+        ];
+
+        // Load about view
+        $this->view('pages/contact', $data);
     }
 
     /**
