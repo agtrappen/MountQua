@@ -46,6 +46,34 @@ INSERT INTO `artikel` (`ArtikelID`, `Naam`, `Omschrijving`, `Prijs`, `Voorraad`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+                           `Voornaam` varchar(255) NOT NULL,
+                           `Achternaam` varchar(255) DEFAULT NULL,
+                           `Email` varchar(255) NOT NULL,
+                           `Straatnaam` varchar(255) DEFAULT NULL,
+                           `Huisnummer` varchar(50) DEFAULT NULL,
+                           `Toevoeging` varchar(50) DEFAULT NULL,
+                           `Postcode` varchar(50) DEFAULT NULL,
+                           `Woonplaats` varchar(255) DEFAULT NULL,
+                           `Telefoon` varchar(50) DEFAULT NULL,
+                           `Onderwerp` varchar(50) NOT NULL,
+                           `Bericht` varchar(255) NOT NULL,
+                           `Bijlage` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`Voornaam`, `Achternaam`, `Email`, `Straatnaam`, `Huisnummer`, `Toevoeging`, `Postcode`, `Woonplaats`, `Telefoon`, `Onderwerp`, `Bericht`, `Bijlage`) VALUES
+('Kaylee', 'Rietveld', 'kayleerietveld@email.com', 'teststraat', '12', 'a', '3456qw', 'Rotterdam', '06123456789', 'test', 'test', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `bedrijf`
 --
 
