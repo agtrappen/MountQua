@@ -63,11 +63,10 @@
     **/
     public function products(){
       
-
       //Set Data
       $data = [
         'version' => '1.0.0',
-        'language' => $language,
+        
       ];
 
       // Load about view
