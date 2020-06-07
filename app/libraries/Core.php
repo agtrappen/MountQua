@@ -45,6 +45,8 @@
           $this->currentMethod = $url[1];
           // Unset 1 index
           unset($url[1]);
+        } else {
+          $this->currentMethod = "";
         }
       }
 

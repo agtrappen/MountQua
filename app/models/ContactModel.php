@@ -26,20 +26,22 @@
     **/
     public function add($data){
         // Prepare Query
-        $this->db->query('INSERT INTO contact (bios_naam, bios_image, adres, postcode, stad, provincie, bereikbaar_auto, bereikbaar_ov, bereikbaar_fiets, voorwaarden)
-        VALUES (:bios_naam, :bios_web, :adres, :postcode, :stad, :provincie, :bereikbaar_auto, :bereikbaar_ov, :bereikbaar_fiets, :voorwaarden)');
+        $this->db->query('INSERT INTO contact (Voornaam, Achternaam, Email, Straatnaam, Huisnummer, Toevoeging, Postcode, Woonplaats, Telefoon, Onderwerp, Bericht, Bijlage)
+        VALUES (:voornaam, :achternaam, :email, :straatnaam, :huisnummer, :toevoeging, :postcode, :woonplaats, :telefoon, :onderwerp, :bericht, :bijlage)');
   
         // Bind Values
-        $this->db->bind(':bios_naam', $data['bios_naam']);
-        $this->db->bind(':bios_image', $data['bios_image']);
-        $this->db->bind(':adres', $data['adres']);
+        $this->db->bind(':voornaam', $data['voornaam']);
+        $this->db->bind(':achternaam', $data['achternaam']);
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':straatnaam', $data['straatnaam']);
+        $this->db->bind(':huisnummer', $data['huisnummer']);
+        $this->db->bind(':toevoeging', $data['toevoeging']);
         $this->db->bind(':postcode', $data['postcode']);
-        $this->db->bind(':stad', $data['stad']);
-        $this->db->bind(':provincie', $data['provincie']);
-        $this->db->bind(':bereikbaar_auto', $data['bereikbaar_auto']);
-        $this->db->bind(':bereikbaar_ov', $data['bereikbaar_ov']);
-        $this->db->bind(':bereikbaar_fiets', $data['bereikbaar_fiets']);
-        $this->db->bind(':voorwaarden', $data['voorwaarden']);
+        $this->db->bind(':woonplaats', $data['woonplaats']);
+        $this->db->bind(':telefoon', $data['telefoon']);
+        $this->db->bind(':onderwerp', $data['onderwerp']);
+        $this->db->bind(':bericht', $data['bericht']);
+        $this->db->bind(':bijlage', $data['bijlage']);
   
         //Execute
         if($this->db->execute()){
@@ -47,5 +49,5 @@
         } else {
           return false;
         }
-      }  
+      }
   }
