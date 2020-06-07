@@ -1,3 +1,4 @@
+
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-bold logo-text"><img src="<?php echo URLROOT; ?>/public/img/logo.png" /></h5>
     <form class="form-inline my-2 my-lg-0">
@@ -5,13 +6,22 @@
     </form>
     <nav class="my-2 my-md-0 mr-md-3">
         <?php if(!isset($_SESSION['user_id'])) : ?>
+          
+            <!-- change navbar language -->
 
-            <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/">Home</a>
-            <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/products"><?php echo $lang['onze_producten'];?></a>
-            <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/pages/about"><?php echo $lang['over_ons'];?></a>
+            <?php foreach ($data['navbar'] as $navbar) : ?>
+                <a class="p-2 menu-item" href="<?php echo URLROOT ?><?php echo $navbar->url; ?>">
+                <?php 
+                
+                if($_SESSION['lang'] == 'nl'){
+                    echo $navbar->content_nl;
+                } else if ($_SESSION['lang'] == 'en'){
+                    echo $navbar->content_en;
+                }  
+                ?></a>
+            <?php endforeach; ?>
 
-     
-            <a class="p-2 menu-item" href="<?php echo URLROOT; ?>/pages/contact">Contact</a>
+      
         <?php endif; ?>
     </nav>
     <?php if(isset($_SESSION['user_id'])) : ?>

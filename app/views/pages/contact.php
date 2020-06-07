@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
+
     <header>
         <div class="overlay"></div>
         <img src="<?php echo URLROOT; ?>/public/img/contactheader.jpg"></img>
@@ -23,16 +24,16 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="voornaam"><?php echo $lang['voornaam'];?></label>
-                    <input type="voornaam" class="form-control" name="voornaam" id="voornaam" placeholder="Voornaam">
+                    <input type="voornaam" class="form-control" name="voornaam" id="voornaam">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="achternaam"><?php echo $lang['achternaam'];?></label>
-                    <input type="achternaam" class="form-control" name="achternaam" id="achternaam" placeholder="Achternaam">
+                    <input type="achternaam" class="form-control" name="achternaam" id="achternaam">
                 </div>
             </div>
             <div class="form-group">
                 <label for="email">Email *</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                <input type="email" class="form-control" name="email" id="email">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -66,23 +67,23 @@
             </div>
             <h3><?php echo $lang['je_bericht'];?></h3>
             <div class="form-group">
-                <label for="onderwerp">Onderwerp *</label>
+                <label for="onderwerp"><?php echo $lang['onderwerp'];?></label>
                 <select class="form-control" id="onderwerp">
-                    <option>Selecteer het onderwerp</option>
-                    <option>Kwaliteit</option>
-                    <option>Product</option>
-                    <option>Sponsors</option>
-                    <option>Werken bij MountQua</option>
+                    <option><?php echo $lang['selecteerOnderwerp'];?></option>
+                    <option><?php echo $lang['kwaliteit'];?></option>
+                    <option><?php echo $lang['product'];?></option>
+                    <option><?php echo $lang['sponsors'];?></option>
+                    <option><?php echo $lang['werkenBij'];?></option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="bericht">Bericht *</label>
+                <label for="bericht"><?php echo $lang['bericht'];?></label>
                 <textarea class="form-control" rows="10" name="bericht" id="bericht"></textarea>
             </div>
             <div class="form-group">
-                <label for="bijlage">Bijlage (.jpg, .png, .gif, max. 4MB)</label>
+                <label for="bijlage"><?php echo $lang['bijlage'];?></label>
                 <input type="file" class="form-control-file" id="bijlage">
             </div>
-            <button type="submit" name="save" class="btn btn-primary" id="button">Verzenden</button>
+            <button type="submit" name="save" class="btn btn-primary" id="button"><?php echo $lang['verzenden'];?></button>
         </form>
         <?php require APPROOT . '/views/inc/footer.php'; ?>

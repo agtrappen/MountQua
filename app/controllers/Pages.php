@@ -15,6 +15,8 @@
       // Load Models
       $this->companyModel = $this->model('CompanyModel');
       $this->contactModel = $this->model('ContactModel');
+      
+      
     }
 
     /**
@@ -25,17 +27,30 @@
     **/
     public function index(){
       $company = $this->companyModel->get(1);
+      $navbar = $this->companyModel->navbar();
+      $titel = $this->companyModel->titel();
+      $subTitel = $this->companyModel->subTitel();
+      $content = $this->companyModel->content();
+      
+     
 
       // If logged in, redirect to posts
       if(isset($_SESSION['user_id'])){
         redirect('crm');
       }
 
-      //Set Data
+      // Set Data
       $data = [
         'company' => $company,
+        'navbar' => $navbar,
+        'titel' => $titel,
+        'subtitel' => $subTitel,
+        'content' => $content,
+        
       ];
-
+      
+      
+      
       // Load homepage/index view
       $this->view('pages/index', $data);
     }
@@ -47,9 +62,12 @@
     * @return array $data
     **/
     public function products(){
+      
+
       //Set Data
       $data = [
-        'version' => '1.0.0'
+        'version' => '1.0.0',
+        'language' => $language,
       ];
 
       // Load about view
@@ -63,6 +81,7 @@
     * @return array $data
     **/
     public function contact(){
+      $navbar = $this->companyModel->navbar();
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST
         $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -82,7 +101,8 @@
       } else {
       //Set Data
       $data = [
-        'version' => '1.0.0'
+        'version' => '1.0.0',
+        'navbar' => $navbar,
       ];
 
       // Load about view
@@ -98,10 +118,12 @@
     **/
     public function about(){
       $company = $this->companyModel->get(1);
+      $navbar = $this->companyModel->navbar();
 
       //Set Data
       $data = [
         'company' => $company,
+        'navbar' => $navbar,
       ];
 
       // Load about view
@@ -123,4 +145,11 @@
       // Load about view
       $this->view('pages/cart', $data);
     }
+
+ 
+ 
+
+  
+
+  
 }

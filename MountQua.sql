@@ -147,6 +147,25 @@ CREATE TABLE `gebruiker` (
   `Aanmaakdatum` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+CREATE TABLE `languages` (
+	`id` int(11) PRIMARY KEY NOT NULL,
+    `titel` varchar(255) NOT NULL,
+    `content_nl` varchar(255) NOT NULL,
+    `content_en` varchar(255) NOT NULL
+    
+);
+
+INSERT INTO `Languages` (`id`,`titel`,`content_nl`,`content_en`)
+VALUES 
+(1,"home","Home","Home"),
+(2,"onzeProducten","Onze Producten","Our Products"),
+(3,"overOns","Over Ons","About Us"),
+(4,"contact","Contact","Contact");
+
+
+
+
 --
 -- Dumping data for table `gebruiker`
 --
@@ -285,6 +304,7 @@ ALTER TABLE `factuur`
 ALTER TABLE `gebruiker`
   ADD CONSTRAINT `gebruiker_ibfk_1` FOREIGN KEY (`BedrijfID`) REFERENCES `bedrijf` (`BedrijfID`),
   ADD CONSTRAINT `gebruiker_ibfk_2` FOREIGN KEY (`RolID`) REFERENCES `rol` (`RolID`);
+  
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

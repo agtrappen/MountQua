@@ -15,6 +15,7 @@
     public function __construct(){
       // Load Models
       $this->productsModel = $this->model('productsModel');
+      $this->companyModel = $this->model('CompanyModel');
     }
     /**
     * Index method
@@ -23,10 +24,13 @@
     * @return array $data
     **/
     public function index(){
+       
       $products = $this->productsModel->getProducts();
+      $navbar = $this->companyModel->navbar();
 
       $data = [
-        'products' => $products
+        'products' => $products,
+        'navbar' => $navbar,
       ];
 
       $this->view('products/index', $data);

@@ -9,6 +9,7 @@
 // Start the session
 session_start();
 
+$lang = $_SESSION['lang'];
 // set language
 if (!isset($_SESSION['lang']))
 		$_SESSION['lang'] = "nl";

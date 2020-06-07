@@ -31,4 +31,54 @@
 
       return $row;
     }
+
+    public function titel() {
+
+      $titel = $this->db->query("SELECT `content_nl`,`content_en`,`url`  FROM `languages` WHERE `titel` = 'titel'");
+      
+        // dont fetch as single but as array
+        $titel = $this->db->single();
+        
+  
+        return $titel;
+
+    }
+
+    public function subTitel() {
+
+      $this->db->query("SELECT `content_nl`,`url`,`content_en`,`url`  FROM `languages` WHERE `titel` = 'subtitel'");
+      
+        // dont fetch as single but as array
+        $subTitel = $this->db->single();
+  
+        return $subTitel;
+
+    }
+
+    public function navbar() {
+
+      $this->db->query("SELECT `content_nl`,`content_en`,`url`  FROM `languages` WHERE `titel` = 'navbar'");
+      
+        // dont fetch as single but as array
+        $row = $this->db->resultSet();
+  
+        return $row;
+
+    }
+
+    public function content() {
+
+      $this->db->query("SELECT `content_nl`,`content_en`,`url`  FROM `languages` WHERE `titel` = 'content'");
+      
+        // dont fetch as single but as array
+        $row = $this->db->single();
+  
+        return $row;
+
+    }
+
+
+  
+
+  
   }

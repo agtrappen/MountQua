@@ -92,6 +92,8 @@ class Database {
 	public function resultset(){
 		$this->execute();
 		return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+		
+
 	}
 
 	/**
@@ -124,4 +126,14 @@ class Database {
 	public function lastInsertId(){
 		return $this->dbh->lastInsertId();
 	}
+
+	public function getColumn(){
+		$this->execute();
+		
+		return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	}
+
+
+	
 }
