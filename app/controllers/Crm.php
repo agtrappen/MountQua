@@ -60,13 +60,16 @@
     * @return array $data
     **/
     public function images(){
+      $path = "../public/img/";
+
       if($_SERVER['REQUEST_METHOD'] == 'POST') {
-      
-        $this->crmModel->addImage($data);
-        redirect('crm/images');
+        $oldpath = $_FILES['bijlage']['tmp_name'];
+        $newpath = APPROOT . '/../public/img/' . $_FILES['bijlage']['name'];
+
+        move_uploaded_file($oldpath, $newpath);
       }
 
-      $images = glob("../public/img/"."*.jpg");
+      $images = glob($path."*");
         
       $data = [
         'images' => $images

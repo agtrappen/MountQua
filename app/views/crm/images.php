@@ -16,7 +16,7 @@
             <form action="<?php echo URLROOT; ?>/crm/images" method = "post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="bijlage">Bijlage Image</label>
-                    <input required type="file" name="bijlage" class="form-control-file" id="bijlage" accept=".csv">
+                    <input required type="file" name="bijlage" class="form-control-file" id="bijlage" accept="image/*">
                 </div>
                 <input type="submit" value="Toevoegen" class="btn btn-success mt-1" />
             </form>  
