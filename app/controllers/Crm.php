@@ -52,4 +52,26 @@
 
       $this->view('crm/products', $data);
     }
+
+    /**
+    * Products method
+    * returns $data to posts/index
+    * @param none
+    * @return array $data
+    **/
+    public function images(){
+      if($_SERVER['REQUEST_METHOD'] == 'POST') {
+      
+        $this->crmModel->addImage($data);
+        redirect('crm/images');
+      }
+
+      $images = glob("../public/img/"."*.jpg");
+        
+      $data = [
+        'images' => $images
+      ];
+
+      $this->view('crm/images', $data);
+    }
   }
