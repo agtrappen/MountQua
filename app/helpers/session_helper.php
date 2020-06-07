@@ -1,11 +1,4 @@
 <?php
-/**
-* @  Welcome class extends the controller class
-* @author Alexander
-* @version 1.0
-* @since 28-10-2018
-**/
-
 // Start the session
 session_start();
 
@@ -18,14 +11,10 @@ if (!isset($_SESSION['lang']))
 		else if ($_GET['lang'] == "en")
 			$_SESSION['lang'] = "en";
   }
-  
-  
-
-
 
 /**
 * flash method
-* @  Flash message helper, puts the flash div in the session
+* Flash message helper, puts the flash div in the session
 * @param string $name string | string $message | string $class
 * @return none
 **/

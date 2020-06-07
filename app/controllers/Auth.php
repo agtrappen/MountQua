@@ -1,9 +1,7 @@
 <?php
     /**
-    * @  Auth class extends the controller class
+    * Auth class extends the controller class
     * @author Alexander
-    * @version 1.0
-    * @since 28-10-2018
     **/
   class Auth extends Controller{
     public function __construct(){
@@ -11,7 +9,7 @@
     }
     /**
     * Index method
-    * @  redirects to the welcome page
+    * redirects to the welcome page
     * @param none
     * @return none
     **/
@@ -21,7 +19,7 @@
 
     /**
     * Register method
-    * @  fills the $data array with the form informations and send it to the users db
+    * fills the $data array with the form informations and send it to the users db
     * @param none
     * @return array $data
     **/
@@ -118,7 +116,7 @@
 
     /**
     * Login method
-    * @  checks if the login information matches with the db informations
+    * checks if the login information matches with the db informations
     * @param none
     * @return array $data
     **/
@@ -197,7 +195,7 @@
 
     /**
     * createusersession method
-    * @  Create Session With User Info
+    * Create Session With User Info
     * @param string $user
     * @return none
     **/
@@ -210,7 +208,7 @@
 
     /**
     * logout method
-    * @  Logout & Destroy Session
+    * Logout & Destroy Session
     * @param none
     * @return none
     **/
@@ -224,7 +222,7 @@
 
     /**
     * isloggedin method
-    * @  Checks if Logged In
+    * Checks if Logged In
     * @param none
     * @return true||false
     **/

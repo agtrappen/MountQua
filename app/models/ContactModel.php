@@ -1,16 +1,10 @@
 <?php
-    /**
-    * @  Product model
-    * @author Alexander
-    * @version 1.0
-    * @since 28-10-2018
-    **/
   class ContactModel {
     private $db;
 
     /**
     * post constructor
-    * @  creates new db object
+    * creates new db object
     * @param none
     * @return none
     **/
@@ -20,7 +14,7 @@
 
     /**
     * addpost method
-    * @  Binds the values and Adds to bioscoop
+    * Binds the values and Adds to bioscoop
     * @param array $data
     * @return true||false
     **/

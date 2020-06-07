@@ -1,16 +1,10 @@
 <?php
-    /**
-    * @  Auth class
-    * @author Alexander
-    * @version 1.0
-    * @since 28-10-2018
-    **/
   class AuthModel {
     private $db;
 
     /**
     * user constructor
-    * @  creates new db object
+    * creates new db object
     * @param none
     * @return none
     **/
@@ -20,7 +14,7 @@
 
     /**
     * register method
-    * @  Add user or register
+    * Add user or register
     * @param array $data
     * @return true||false
     **/
@@ -34,16 +28,12 @@
       $this->db->bind(':password', $data['password']);
 
       //Execute
-      if($this->db->execute()){
-        return true;
-      } else {
-        return false;
-      }
+      return $this->db->execute();
     }
 
     /**
     * finduserbyemail method
-    * @  Find User BY Email
+    * Find User BY Email
     * @param string $email
     * @return true||false
     **/
@@ -63,7 +53,7 @@
 
     /**
     * login method
-    * @  Authenticate the User
+    * Authenticate the User
     * @param string $email && string $password
     * @return string $row
     **/
@@ -83,7 +73,7 @@
 
     /**
     * getuserbyid method
-    * @  Finds User By ID
+    * Finds User By ID
     * @param int $id
     * @return string $row
     **/

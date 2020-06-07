@@ -1,9 +1,7 @@
 <?php
     /**
-    * @  Core class
+    * Core class
     * @author Alexander
-    * @version 1.0
-    * @since 28-10-2018
     **/
   class Core {
     // Set Defaults
@@ -13,7 +11,7 @@
 
     /**
     * core constructor
-    * @  Looks in controllers folder for controller and unset 0 index
+    * Looks in controllers folder for controller and unset 0 index
     * @param none
     * @return string $url
     **/
@@ -55,7 +53,7 @@
 
     /**
     * geturl method
-    * @  Construct URL From $_GET['url']
+    * Construct URL From $_GET['url']
     * @param none
     * @return string $url
     **/

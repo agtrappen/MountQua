@@ -1,9 +1,7 @@
 <?php
    /**
-   * @  PDO DATABASE CLASS, Connects Database Using PDO, Creates Prepeared Statements, Binds params to values, Returns rows and results
+   * PDO DATABASE CLASS, Connects Database Using PDO, Creates Prepeared Statements, Binds params to values, Returns rows and results
    * @author Alexander
-   * @version 1.0
-   * @since 28-10-2018
    **/
 class Database {
 	private $host = DB_HOST;
@@ -17,7 +15,7 @@ class Database {
 
 	/**
     * database constructor
-    * @  Set DSN and creates a new PDO instanace
+    * Set DSN and creates a new PDO instanace
     * @param none
     * @return string $dsn
     **/
@@ -40,7 +38,7 @@ class Database {
 
 	/**
     * query method
-    * @  Prepares statement with query
+    * Prepares statement with query
     * @param string $query
     * @return none
     **/
@@ -50,7 +48,7 @@ class Database {
 
 	/**
     * bind method
-    * @  Binds values with the params
+    * Binds values with the params
     * @param string $param | string $value | bool $type
     * @return none
     **/
@@ -75,7 +73,7 @@ class Database {
 
 	/**
     * execute method
-    * @  Executes the prepared statement
+    * Executes the prepared statement
     * @param none
     * @return none
     **/
@@ -85,7 +83,7 @@ class Database {
 
 	/**
     * resultset method
-    * @  Get result set as array of objects
+    * Get result set as array of objects
     * @param none
     * @return string $stmt
     **/
@@ -96,7 +94,7 @@ class Database {
 
 	/**
     * single method
-    * @  Get single record as object
+    * Get single record as object
     * @param none
     * @return string $stmt
     **/
@@ -107,7 +105,7 @@ class Database {
 
 	/**
     * row count method
-    * @  Get record row count
+    * Get record row count
     * @param none
     * @return string $stmt
     **/
@@ -117,7 +115,7 @@ class Database {
 
 	/**
     * lastinsertid method
-    * @  Returns the last inserted ID
+    * Returns the last inserted ID
     * @param none
     * @return lastInsertId
     **/

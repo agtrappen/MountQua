@@ -1,9 +1,8 @@
 <?php
 /**
-* @  Bootstrap
+* Bootstrap
 * @author Alexander
 * @version 1.0
-* @since 28-10-2018
 **/
 
   // Load Config
@@ -14,7 +13,7 @@
 
   /**
   * autoload method
-  * @  Autoloads the Core Classes
+  * Autoloads the Core Classes
   * @param string $classname
   * @return string $classname
   **/

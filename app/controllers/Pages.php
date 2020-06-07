@@ -2,8 +2,6 @@
     /**
     * Pages class extends the controller class
     * @author Alexander
-    * @version 1.0
-    * @since 28-10-2018
     **/
   class Pages extends Controller{
     /**
@@ -41,24 +39,8 @@
     }
 
     /**
-    * about method
-    * method for the about page, returns the $data variable to pages/about
-    * @param none
-    * @return array $data
-    **/
-    public function products(){
-      //Set Data
-      $data = [
-        'version' => '1.0.0'
-      ];
-
-      // Load about view
-      $this->view('pages/products', $data);
-    }
-
-    /**
-    * bevestiging method
-    * @  method for the confirmation page, returns the $data variable to pages/bevestiging
+    * contact method
+    * method to insert the input values to the contact db
     * @param none
     * @return array $data
     **/
@@ -106,8 +88,8 @@
     }
 
     /**
-    * contact method
-    * @  method for the contact page, returns the $data variable to pages/contact
+    * about method
+    * method for about page, calls the company model and returns the data to the view
     * @param none
     * @return array $data
     **/
@@ -121,21 +103,5 @@
 
       // Load about view
       $this->view('pages/about', $data);
-    }
-
-    /**
-    * contact method
-    * @  method for the contact page, returns the $data variable to pages/contact
-    * @param none
-    * @return array $data
-    **/
-    public function cart(){
-      //Set Data
-      $data = [
-        'version' => '1.0.0'
-      ];
-
-      // Load about view
-      $this->view('pages/cart', $data);
     }
 }
