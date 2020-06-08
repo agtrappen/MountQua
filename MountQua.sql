@@ -204,6 +204,22 @@ INSERT INTO `rol` (`RolID`, `Role_Name`) VALUES
 (3, 'edit');
 
 --
+-- Table structure for table `searchqueries`
+--
+
+CREATE TABLE `searchqueries` (
+  `QueryID` int(11) NOT NULL,
+  `Query` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `searchqueries`
+--
+
+INSERT INTO `searchqueries` (`QueryID`, `Query`) VALUES
+(1, 'Blauw')
+
+--
 -- Indexes for dumped tables
 --
 
@@ -256,6 +272,12 @@ ALTER TABLE `rol`
   ADD PRIMARY KEY (`RolID`);
 
 --
+-- Indexes for table `searchqueries`
+--
+ALTER TABLE `searchqueries`
+  ADD PRIMARY KEY (`QueryID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -284,6 +306,12 @@ ALTER TABLE `factuur`
 --
 ALTER TABLE `gebruiker`
   MODIFY `GebruikerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `searchqueries`
+--
+ALTER TABLE `searchqueries`
+  MODIFY `QueryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
