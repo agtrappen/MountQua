@@ -17,7 +17,7 @@
             <div class="card card-body mb-3 ml-2 mr-2 col-lg-3">
                 <h4 class="card-title"><?php echo $product->Naam; ?></h4>
                 <img src="<?php echo $product->Image; ?>" class="img-fluid" alt="Responsive image">
-                <a class="btn btn-success mt-1" href="">Bestellen</a>
+                <a class="btn btn-success mt-1" href="<?php echo URLROOT; ?>/bestelling/add/<?php echo $product->ArtikelID; ?>">Bestellen</a>
             </div>
         <?php endforeach; ?>
         </div>
