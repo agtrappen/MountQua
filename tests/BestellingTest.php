@@ -22,4 +22,23 @@ final class BestellingTest extends TestCase
     // Assert
     $this->assertTrue($bestellingAdded);
   }
+
+  public function testIfUserCanBeCreated()
+  {
+    // Arrange
+    $userData = array();
+    $userData['voornaam'] = 'bart';
+    $userData['achternaam'] = 'piet';
+    $userData['straat'] = 'testlaan';
+    $userData['postcode'] = '4133EL';
+    $userData['email'] = 'testi@gmail.com';
+    $userData['datum'] = '2020-06-09';
+
+    $bestellingModel = new BestellingModel();
+    // Act
+    $userAdded = $bestellingModel->addCustomer($userData);
+
+    // Assert
+    $this->assertTrue($userAdded);
+  }
 }
